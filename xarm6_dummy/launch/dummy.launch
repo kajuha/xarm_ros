@@ -1,0 +1,17 @@
+<launch>
+    <arg name="message_display" default="screen" doc="output type"/>
+    <arg name="main_hz" default="1000" doc="main loop herz"/>
+    <arg name="PUB_SEC_PERIOD" default="1" doc="PUB_SEC_PERIOD"/>
+    
+    <include file="$(find xarm6_dummy)/launch/base.launch">
+        <arg name="id" value="L_xarm6"/>
+        <arg name="main_hz" value="$(arg main_hz)"/>
+        <arg name="PUB_SEC_PERIOD" value="$(arg PUB_SEC_PERIOD)"/>
+    </include>
+    
+    <include file="$(find xarm6_dummy)/launch/base.launch">
+        <arg name="id" value="R_xarm6"/>
+        <arg name="main_hz" value="$(arg main_hz)"/>
+        <arg name="PUB_SEC_PERIOD" value="$(arg PUB_SEC_PERIOD)"/>
+    </include>
+</launch>

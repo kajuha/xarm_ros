@@ -1,0 +1,12 @@
+<launch>
+    <arg name="message_display" default="screen" doc="output type"/>
+    <arg name="id" default="xarm" doc="id"/>
+    <arg name="main_hz" default="1000" doc="main loop herz"/>
+    <arg name="PUB_SEC_PERIOD" default="1" doc="PUB_SEC_PERIOD"/>
+    
+    <node pkg="xarm6_dummy" type="dummy" name="$(arg id)" output="$(arg message_display)">
+        <param name="id" value="$(arg id)"/>
+        <param name="main_hz" value="$(arg main_hz)"/>
+        <param name="PUB_SEC_PERIOD" value="$(arg PUB_SEC_PERIOD)"/>
+    </node>
+</launch>
