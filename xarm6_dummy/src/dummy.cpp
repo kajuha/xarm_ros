@@ -28,6 +28,7 @@ bool clearErrCallback(xarm_msgs::ClearErr::Request &req, xarm_msgs::ClearErr::Re
     robotMsg.mt_able = CLEAR_ERR_NUM;
     robotMsg.err = CLEAR_ERR_NUM;
     robotMsg.warn = CLEAR_ERR_NUM;
+    robotMsg.angle.clear();
     for (int i=0; i<sizeof(robotMsg.pose)/sizeof(float); i++) {
         robotMsg.angle.push_back(CLEAR_ERR_NUM);
         robotMsg.pose[i] = CLEAR_ERR_NUM;
@@ -50,6 +51,7 @@ bool motionCtrlCallback(xarm_msgs::SetAxis::Request &req, xarm_msgs::SetAxis::Re
     robotMsg.mt_able = MOTION_CTRL_NUM;
     robotMsg.err = MOTION_CTRL_NUM;
     robotMsg.warn = MOTION_CTRL_NUM;
+    robotMsg.angle.clear();
     for (int i=0; i<sizeof(robotMsg.pose)/sizeof(float); i++) {
         robotMsg.angle.push_back(MOTION_CTRL_NUM);
         robotMsg.pose[i] = MOTION_CTRL_NUM;
@@ -72,6 +74,7 @@ bool setModeCallback(xarm_msgs::SetInt16::Request &req, xarm_msgs::SetInt16::Res
     robotMsg.mt_able = SET_MODE_NUM;
     robotMsg.err = SET_MODE_NUM;
     robotMsg.warn = SET_MODE_NUM;
+    robotMsg.angle.clear();
     for (int i=0; i<sizeof(robotMsg.pose)/sizeof(float); i++) {
         robotMsg.angle.push_back(SET_MODE_NUM);
         robotMsg.pose[i] = SET_MODE_NUM;
@@ -94,6 +97,7 @@ bool setStateCallback(xarm_msgs::SetInt16::Request &req, xarm_msgs::SetInt16::Re
     robotMsg.mt_able = SET_STATE_NUM;
     robotMsg.err = SET_STATE_NUM;
     robotMsg.warn = SET_STATE_NUM;
+    robotMsg.angle.clear();
     for (int i=0; i<sizeof(robotMsg.pose)/sizeof(float); i++) {
         robotMsg.angle.push_back(SET_STATE_NUM);
         robotMsg.pose[i] = SET_STATE_NUM;
@@ -116,6 +120,7 @@ bool goHomeCallback(xarm_msgs::Move::Request &req, xarm_msgs::Move::Response &re
     robotMsg.mt_able = GO_HOME_NUM;
     robotMsg.err = GO_HOME_NUM;
     robotMsg.warn = GO_HOME_NUM;
+    robotMsg.angle.clear();
     for (int i=0; i<sizeof(robotMsg.pose)/sizeof(float); i++) {
         robotMsg.angle.push_back(GO_HOME_NUM);
         robotMsg.pose[i] = GO_HOME_NUM;
@@ -138,6 +143,7 @@ bool moveJointCallback(xarm_msgs::Move::Request &req, xarm_msgs::Move::Response 
     robotMsg.mt_able = MOVE_JOINT_NUM;
     robotMsg.err = MOVE_JOINT_NUM;
     robotMsg.warn = MOVE_JOINT_NUM;
+    robotMsg.angle.clear();
     for (int i=0; i<sizeof(robotMsg.pose)/sizeof(float); i++) {
         robotMsg.angle.push_back(MOVE_JOINT_NUM);
         robotMsg.pose[i] = MOVE_JOINT_NUM;
@@ -160,6 +166,7 @@ bool moveLineToolCallback(xarm_msgs::Move::Request &req, xarm_msgs::Move::Respon
     robotMsg.mt_able = MOVE_LINE_TOOL_NUM;
     robotMsg.err = MOVE_LINE_TOOL_NUM;
     robotMsg.warn = MOVE_LINE_TOOL_NUM;
+    robotMsg.angle.clear();
     for (int i=0; i<sizeof(robotMsg.pose)/sizeof(float); i++) {
         robotMsg.angle.push_back(MOVE_LINE_TOOL_NUM);
         robotMsg.pose[i] = MOVE_LINE_TOOL_NUM;
@@ -182,6 +189,7 @@ bool moveLineCallback(xarm_msgs::Move::Request &req, xarm_msgs::Move::Response &
     robotMsg.mt_able = MOVE_LINE_NUM;
     robotMsg.err = MOVE_LINE_NUM;
     robotMsg.warn = MOVE_LINE_NUM;
+    robotMsg.angle.clear();
     for (int i=0; i<sizeof(robotMsg.pose)/sizeof(float); i++) {
         robotMsg.angle.push_back(MOVE_LINE_NUM);
         robotMsg.pose[i] = MOVE_LINE_NUM;
